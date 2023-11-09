@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="home"><mat-icon>dashboard</mat-icon>dashboard</a>
+      <a mat-list-item routerLink="course"><mat-icon>brightness_auto</mat-icon>
+        course</a>
+      <a mat-list-item routerLink="year"><mat-icon>assistant_photo</mat-icon>
+        yearstudy</a>
+      <a mat-list-item routerLink="education"><mat-icon>control_point</mat-icon>
+        education level</a>
+      <a mat-list-item routerLink="university"><mat-icon> school</mat-icon>
+        univesity</a>
+
+      <a mat-list-item routerLink="register"><mat-icon> add_comment</mat-icon>
+        Register</a>
+
+      <a mat-list-item routerLink="student-list"><mat-icon>list</mat-icon>
+        student list</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>tehamafieldproject</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="content">
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

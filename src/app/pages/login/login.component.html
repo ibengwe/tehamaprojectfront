@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+</head>
+<body>
+
+    <div class="container">
+        <form [formGroup]="loginForm">
+          <h1>login form</h1>
+        <div class="formGroup">
+            <label for="">username</label>
+            <input type="text" class="form-control" required>
+        </div>
+
+        <div class="formGroup">
+            <label for="">password</label>
+            <input type="password" class="form-control" required>
+        </div>
+
+        <input type="submit" class="btn" value="login" (click)="onClick()">
+    </form>
+    </div>
+</body>
+</html>
